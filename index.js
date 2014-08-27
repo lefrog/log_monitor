@@ -1,9 +1,10 @@
 var fs = require('fs')
-    events = require('events')
-    pattern = /trigproc/;
+    events = require('events');
+
+var pattern = new RegExp(process.argv[2]);
+var logfilePath = process.argv[3];
 
 var client = new events.EventEmitter();
-var logfilePath = "file.log";
 var logfileFd,
     logfileWatcher;
 
